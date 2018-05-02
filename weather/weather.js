@@ -1,8 +1,10 @@
 const request = require('request')
 
+const keys = require('../keys')
+
 let getWeather = (lat, long, callback) => {
   request.get({
-    url: `https://api.darksky.net/forecast/9822d5328215bc13220299cb7052e548/${lat},${long}`,
+    url: `https://api.darksky.net/forecast/${keys.weatherApi}/${lat},${long}`,
     json: true
     }, 
     (error, response, body) => {
